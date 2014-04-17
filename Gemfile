@@ -6,6 +6,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'slim'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.3'
+gem 'bourbon'
+gem 'neat'
+
 
 # Grab styles from Roster Sass
 # gem 'roster-sass', git: 'git@github.com:TheRoster/roster-sass.git'
