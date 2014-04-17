@@ -8,7 +8,7 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bourbon'
 gem 'neat'
-
+gem 'simple_form'
 
 # Grab styles from Roster Sass
 # gem 'roster-sass', git: 'git@github.com:TheRoster/roster-sass.git'
