@@ -1,6 +1,24 @@
-h1 Welcome to The College Roster
+doctype html
+html
+  head
+    title TheCollegeRoster
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css" /
+    link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'
+  body
+    .welcome-page
+      .header
+        .header-logo
+          p The College Roster
+        .header-signin
+          button
+            | Sign In
 
-h4 This app is currently in beta. Keep posted yo.
+      .content
+        h1.content-header
+          | Level the playing field.
+        form.content-form
 
-.class
-  p Oh my god I'm in a div named class
+      = render 'layouts/footer'
