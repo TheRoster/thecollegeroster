@@ -19,6 +19,11 @@ html
       .content
         h1.content-header
           | Level the playing field.
-        form.content-form
+        / = simple_form_for @athlete do |f|
+          / = f.input :first_name
+          / = f.input :last_name
+          / = f.input :email
+          / = f.input :password
+          / = f.button :submit
 
       = render 'layouts/footer'
