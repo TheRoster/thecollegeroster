@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-pete:
-  first_name: 'Peter'
-  last_name: 'Franconi'
-  email: 'peter.franconi@gmail.com'
+scott:
+  first_name: 'Scott'
+  last_name: 'Johnson'
+  email: 'scottjohnson@gmail.com'
 
-katie:
-  first_name: 'Katie'
-  last_name: 'Sharma'
-  email: 'katierobs@gmail.com'
+jim:
+  first_name: 'Jim'
+  last_name: 'Robinson'
+  email: 'jimrobinson@gmail.com'
