@@ -23,3 +23,8 @@ gem 'capistrano', '~> 3.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'font-awesome-sass'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem "capybara"
+  gem 'pry'
+end
