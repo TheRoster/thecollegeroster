@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -181,6 +182,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bourbon
   capistrano (~> 3.1.0)
   capybara
