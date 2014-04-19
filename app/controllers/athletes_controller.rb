@@ -28,7 +28,7 @@ class AthletesController < ApplicationController
 
     respond_to do |format|
       if @athlete.save
-        format.html { redirect_to @athlete, notice: 'Athlete was successfully created.' }
+        format.html { redirect_to athletes_url, notice: "Athlete #{@athlete.first_name} #{@athlete.last_name} was successfully created." }
         format.json { render :show, status: :created, location: @athlete }
       else
         format.html { render :new }
