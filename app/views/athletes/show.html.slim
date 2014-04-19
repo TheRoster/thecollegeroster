@@ -1,0 +1,13 @@
+p#notice= notice
+p
+  strong First Name:
+  = @athlete.first_name
+p
+  strong Last Name:
+  = @athlete.last_name
+p
+  strong Email:
+  = @athlete.email
+= link_to 'Edit', edit_athlete_path(@athlete)
+= link_to 'Back', athletes_path
+

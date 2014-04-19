@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'athletes/new'
+  root 'athletes#new'
 
-  root 'welcome#index'
+  resources :athletes
+  get 'welcome', to: 'athletes#new', as: 'welcome'
 
 end
