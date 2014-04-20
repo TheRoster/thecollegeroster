@@ -22,7 +22,6 @@ class AthletesController < ApplicationController
   end
 
   # POST /users
-  # POST /users.json
   def create
     @athlete = Athlete.new(athlete_params)
 
