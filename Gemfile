@@ -27,7 +27,7 @@ group :development, :test do
   gem 'sqlite3'
   gem "capybara"
   gem 'pry'
-  gem 'bcrypt-ruby', '~> 3.1.2', platform: "ruby"
+  # gem 'bcrypt-ruby', '~> 3.1.2', platform: "ruby"
 end
 
 group :production do
