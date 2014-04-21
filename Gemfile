@@ -21,7 +21,7 @@ gem 'capistrano', '~> 3.1.0'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'font-awesome-sass'
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2', platform: "ruby"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
