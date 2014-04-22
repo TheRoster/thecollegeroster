@@ -1,5 +1,6 @@
 class AthletesController < ApplicationController
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
+  before_filter :disable_nav, only: [:landing_page]
 
   def index
     @athletes = Athlete.all
