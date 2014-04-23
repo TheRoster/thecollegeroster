@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    athlete = Athlete.find_by_id(params[:email])
-    if athlete and athlete.authenticate(params[:password])
+    athlete = Athlete.find_by_email(params[:email])
+    if athlete && athlete.authenticate(params[:password])
         session[:email] = athlete.email
         redirect_to athletes_url
     else
-      redirect_to login_path, alert: 'Invalid username/password combination'
+      flash[:error] = 'Invalid email/password combination' # Not quite right!
     end
   end
 
