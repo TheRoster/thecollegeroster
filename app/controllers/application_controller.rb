@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
     @disable_nav = true
   end
 
+  def current_athlete
+    Athlete.find_by_email(session[:email])
+  end
+  helper_method :current_athlete
+
 end

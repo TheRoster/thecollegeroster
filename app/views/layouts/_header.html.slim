@@ -1,6 +1,7 @@
 .header-alt
   .header-logo
     p The College Roster
-  .header-signin
-    p Hi First Name, Last Initial!
-    a= link_to "Sign Out", logout_path
+  - if athlete_signed_in?
+    .header-signin
+      p= "Hi, #{welcome_name current_athlete}"
+      a= link_to "Sign Out", logout_path
