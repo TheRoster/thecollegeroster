@@ -50,6 +50,14 @@ class AthletesController < ApplicationController
     end
   end
 
+  def landing_page
+    if root_url === current_path
+      @disable_nav === true
+    else
+      @disable_nav === false
+    end
+  end
+
   private
     def set_athlete
       @athlete = Athlete.find(params[:id])

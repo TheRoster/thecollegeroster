@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
-  def landing_page
-    @disable_nav = true
-  end
-
   def current_athlete
     Athlete.find_by_email(session[:email])
   end
