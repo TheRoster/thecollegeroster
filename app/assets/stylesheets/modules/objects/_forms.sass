@@ -1,4 +1,29 @@
 .signup-form
-  max-width: 200px
+  max-width: 400px
   input
+    margin: 0px
+    padding: 0px
+    border: none
+    height: 35px
+  .name
+    display: flex
+    flex-direction: row
+  .first-name, .last-name
+    border-color: lighten($blue, 20%)
     width: 100%
+  .last-name
+    border-radius: 0px 5px 5px 0px
+  .first-name
+    border-radius: 5px 0px 0px 5px
+  .confirm
+    display: flex
+    flex-direction: column
+    input
+      width: 100%
+      border-radius: 5px
+  .submit
+    display: flex
+    justify-content: center
+    margin-top: 10px
+    input
+      font-family: 'Droid Sans'
