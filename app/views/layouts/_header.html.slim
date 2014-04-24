@@ -1,6 +1,19 @@
 .header-alt
   .header-logo
     p The College Roster
+  ul.header-nav
+    li
+      a href="#"
+        i.fa.fa-dribbble
+        | Profile
+    li
+      a href="#"
+        i.fa.fa-check
+        | Verify
+    li
+      a href="#"
+        i.fa.fa-upload
+        | Update
   - if athlete_signed_in?
     .header-signin
       p= "Hi, #{welcome_name current_athlete}"

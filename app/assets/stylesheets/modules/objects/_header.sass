@@ -4,14 +4,29 @@
   flex-direction: row
   justify-content: space-between
   background-color: $blue
+  position: fixed
+  width: 100%
+  z-index: 1000
 
 .header-logo, .header-signin
   padding: 10px
   color: $white
 
 .header-signin
+  border-left: 1px solid lighten($blue, 20%)
   p
     display: inline-block
     padding-right: 10px
   a
     color: $alt-blue-3
+
+.header-nav
+  li
+    display: inline-block
+    margin: 5px
+    a
+      font-size: 12px
+    i
+      font-size: 24px
+      padding: 5px
+
