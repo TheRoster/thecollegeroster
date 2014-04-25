@@ -1,6 +1,5 @@
 class AthletesController < ApplicationController
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
-  before_filter :disable_nav, only: [:landing_page]
 
   def index
     @athletes = Athlete.all
@@ -47,14 +46,6 @@ class AthletesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to athletes_url }
       format.json { head :no_content }
-    end
-  end
-
-  def landing_page
-    if root_url === current_path
-      @disable_nav === true
-    else
-      @disable_nav === false
     end
   end
 
