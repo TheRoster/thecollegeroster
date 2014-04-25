@@ -3,7 +3,7 @@
     p#notice= flash[:alert]
 
   = form_tag do
-    fieldset
+    fieldset.fieldset
       = label_tag :email, "Email"
       = text_field_tag :email, params[:email]
       = label_tag :password, "Password"
