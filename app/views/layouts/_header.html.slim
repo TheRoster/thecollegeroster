@@ -1,6 +1,12 @@
 .header
-  .header-logo
-    p The College Roster
+  - if athlete_signed_in?
+    .header-logo
+      a= link_to athletes_path
+        p The College Roster
+  - else
+    .header-logo
+      a= link_to root_path
+        p The College Roster
   - if athlete_signed_in?
     ul.header-nav
       li
