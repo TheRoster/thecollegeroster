@@ -9,7 +9,6 @@ gem 'bourbon'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass'
-
 # gem 'roster-sass', git: 'git@github.com:TheRoster/roster-sass.git'
 
 gem 'turbolinks'
@@ -26,7 +25,9 @@ group :development, :test do
   gem 'sqlite3'
   gem "capybara"
   gem 'pry'
-  gem 'bcrypt-ruby', '~> 3.1.2', platform: "ruby"
+  gem 'bcrypt-ruby', '~> 3.1.2'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 group :production do
