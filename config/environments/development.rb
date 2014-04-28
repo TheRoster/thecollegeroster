@@ -37,4 +37,6 @@ Rails.application.configure do
 
   # config.sass.line_comments = false
   # config.sass.cache = false
+  #
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 end

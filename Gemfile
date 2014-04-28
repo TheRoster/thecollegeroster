@@ -9,6 +9,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass'
+gem 'devise'
 
 # gem 'roster-sass', git: 'git@github.com:TheRoster/roster-sass.git'
 
