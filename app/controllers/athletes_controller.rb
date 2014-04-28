@@ -52,7 +52,7 @@ class AthletesController < ApplicationController
 
   private
     def set_athlete
-      @athlete = Athlete.find(params[:id])
+      @athlete = Athlete.find_by_id(params[:id])
     end
 
     def athlete_params
