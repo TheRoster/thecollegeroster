@@ -1,5 +1,6 @@
 class AthletesController < ApplicationController
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_athlete!
 
   def index
     @athletes = Athlete.all

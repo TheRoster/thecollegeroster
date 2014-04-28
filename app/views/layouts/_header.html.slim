@@ -22,11 +22,11 @@
           i.fa.fa-upload
           | Update
     .header-signin
-      p= "Hi, #{welcome_name current_athlete}"
-      a= link_to "Sign Out", logout_path
+      p= "Hi, #{@email}"
+      a= link_to "Sign Out", destroy_athlete_session_path
   - else
     .welcome-signin
-      a= link_to "Sign In", login_path
+      a= link_to "Sign In", athlete_session_path
 
 
 
