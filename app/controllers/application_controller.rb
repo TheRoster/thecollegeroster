@@ -3,10 +3,4 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
-
-  def current_athlete
-    Athlete.find_by_email(session[:email])
-  end
-  helper_method :current_athlete
-
 end

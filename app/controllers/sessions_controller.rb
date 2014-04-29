@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:email] = nil
-    redirect_to welcome_url, notice: "You've logged out. Thanks!"
+    sign_out
+    redirect_to root_url
   end
 end

@@ -18,6 +18,7 @@ class AthletesController < ApplicationController
   def create
     @athlete = Athlete.new(athlete_params)
     if @athlete.save
+      sign_in @athlete
       flash[:success] = "Athlete #{@athlete.first_name} #{@athlete.last_name} was successfully created."
       redirect_to athletes_url
     else
