@@ -3,8 +3,8 @@
     - if @athlete.errors.any?
       #error_explanation
         h2
-          = pluralize(@athlete.errors.count, "error")
-          | prohibited this user from being saved:
+          = pluralize(@athlete.errors.count, "error ")
+          | prohibited you from being saved:
         ul
           - @athlete.errors.full_messages.each do |message|
             li= message

@@ -17,21 +17,17 @@ class AthletesController < ApplicationController
 
   def create
     @athlete = Athlete.new(athlete_params)
-
-    respond_to do |format|
-      if @athlete.save
-        format.html { redirect_to athletes_url, notice: "Athlete #{@athlete.first_name} #{@athlete.last_name} was successfully created." }
-        format.json { render :show, status: :created, location: @athlete }
-      else
-        format.html { render :new }
-        format.json { render json: @athlete.errors, status: :unprocessable_entity }
-      end
+    if @athlete.save
+      flash[:success] = "Athlete #{@athlete.first_name} #{@athlete.last_name} was successfully created."
+      redirect_to athletes_url
+    else
+      render :new
     end
   end
 
   def update
     respond_to do |format|
-      if @athlete.update(user_params)
+      if @athlete.update(athlete_params)
         format.html { redirect_to @athlete, notice: 'Athlete was successfully updated.' }
         format.json { render :show, status: :ok, location: @athlete }
       else
@@ -55,7 +51,7 @@ class AthletesController < ApplicationController
     end
 
     def athlete_params
-      params.require(:athlete).permit(:first_name, :last_name, :password, :email)
+      params.require(:athlete).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 
 end
