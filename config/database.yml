@@ -21,11 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
+  adapter: mysql
   encoding: utf8
-  database: thecollegeroster
-  username: admin
-  password: MichaelJordan23
+  database: rails
+  username: rails
+  password: qx6eU12Fz7
   host: 107.170.75.27
-  port: 5432
+  port: 3306
   pool: 10
