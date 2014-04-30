@@ -9,11 +9,11 @@
           - @athlete.errors.full_messages.each do |message|
             li= message
     .name
-      = f.input :first_name, inline_label: 'First Name', input_html: { class: 'first-name' }
-      = f.input :last_name, inline_label: 'Last Name', input_html: { class: 'last-name' }
+      = f.input :first_name, label: false, input_html: { class: 'first-name' }
+      = f.input :last_name, label: false, input_html: { class: 'last-name' }
     .confirm
-      = f.input :email, inline_label: 'Email'
-      = f.input :password, inline_label: 'Password'
-      = f.input :password_confirmation, inline_label: 'Confirm Password'
+      = f.input :email, label: false
+      = f.input :password, label: false
+      = f.input :password_confirmation, label: false
     .submit
-      = f.button :submit, value: "Let's Go!"
+      = f.button :submit, value: "Create Yourself"
