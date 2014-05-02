@@ -23,9 +23,9 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: rails
-  username: rails
-  password: qx6eU12Fz7
-  host: 107.170.75.27
+  database: thecollegeroster
+  username: developer
+  password: password
+  host: localhost
   port: 3306
   pool: 10
