@@ -38,11 +38,9 @@ class AthletesController < ApplicationController
   end
 
   def destroy
-    # @athlete.destroy
-    # respond_to do |format|
-      # format.html { redirect_to athletes_url }
-      # format.json { head :no_content }
-    # end
+    Athlete.find(params[:id]).destroy
+    flash[:success] = "Athlete deleted."
+    redirect_to athlete_url
   end
 
   private
