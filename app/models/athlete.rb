@@ -3,6 +3,8 @@ class Athlete < ActiveRecord::Base
   before_create :create_remember_token
 
   validates :first_name, :last_name, :email, presence: true
+  validates_uniqueness_of :email
+
   has_secure_password
 
   def full_name
