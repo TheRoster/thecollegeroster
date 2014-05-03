@@ -13,6 +13,7 @@ class AthletesController < ApplicationController
   end
 
   def edit
+    @athlete = Athlete.find(params[:id])
   end
 
   def create
@@ -27,23 +28,21 @@ class AthletesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @athlete.update(athlete_params)
-        format.html { redirect_to @athlete, notice: 'Athlete was successfully updated.' }
-        format.json { render :show, status: :ok, location: @athlete }
-      else
-        format.html { render :edit }
-        format.json { render json: @athlete.errors, status: :unprocessable_entity }
-      end
+    @athlete = Athlete.find(params[:id])
+    if @athlete.update_attributes(athlete_params)
+      flash[:success] = "Profile Updated!"
+      redirect_to @athlete
+    else
+      render 'edit'
     end
   end
 
   def destroy
-    @athlete.destroy
-    respond_to do |format|
-      format.html { redirect_to athletes_url }
-      format.json { head :no_content }
-    end
+    # @athlete.destroy
+    # respond_to do |format|
+      # format.html { redirect_to athletes_url }
+      # format.json { head :no_content }
+    # end
   end
 
   private
@@ -52,7 +51,7 @@ class AthletesController < ApplicationController
     end
 
     def athlete_params
-      params.require(:athlete).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:athlete).permit(:first_name, :last_name, :email, :high_school, :grad_year, :sport, :height, :weight, :sat, :act, :gpa, :class_rank, :password, :password_confirmation)
     end
 
 end

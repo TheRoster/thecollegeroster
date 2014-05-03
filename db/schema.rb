@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429120849) do
+ActiveRecord::Schema.define(version: 20140503111855) do
 
   create_table "athletes", force: true do |t|
     t.string   "first_name"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140429120849) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
+    t.string   "high_school"
+    t.integer  "grad_year"
+    t.string   "sport"
+    t.text     "height"
+    t.integer  "weight"
+    t.integer  "sat"
+    t.integer  "act"
+    t.decimal  "gpa",             precision: 2, scale: 1
+    t.integer  "class_rank"
   end
 
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"

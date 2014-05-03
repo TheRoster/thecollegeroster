@@ -10,7 +10,7 @@
   - if athlete_signed_in?
     ul.header-nav
       li
-        a href="#"
+        a= link_to edit_athlete_path(current_athlete)
           i.fa.fa-dribbble
           | Profile
       li
