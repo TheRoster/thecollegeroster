@@ -1,12 +1,15 @@
-p#notice= notice
-p
-  strong First Name:
-  = @athlete.first_name
-p
-  strong Last Name:
-  = @athlete.last_name
-p
-  strong Email:
-  = @athlete.email
-= link_to 'Edit', edit_athlete_path(@athlete)
-= link_to 'Back', athletes_path
+.container
+  .section
+    p
+      strong First Name: 
+      = @athlete.first_name
+    p
+      strong Last Name: 
+      = @athlete.last_name
+    p
+      strong Sport: 
+      = @athlete.sport
+    p
+      strong High School: 
+      = @athlete.high_school
+    a= link_to "Follow"

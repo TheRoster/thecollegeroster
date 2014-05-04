@@ -1,4 +1,4 @@
-.form
+.signup-form
   = simple_form_for(@athlete) do |f|
     - if @athlete.errors.any?
       #error_explanation
@@ -8,18 +8,19 @@
         ul
           - @athlete.errors.full_messages.each do |message|
             li= message
-    .form-inputs
-      = f.input :first_name
-      = f.input :last_name
-      = f.input :email
-      = f.input :high_school
-      = f.input :grad_year
-      = f.input :sport
-      = f.input :height
-      = f.input :weight
-      = f.input :sat
-      = f.input :act
-      = f.input :gpa
-      = f.input :class_rank
+    .confirm
+      = f.input :first_name, label: false
+      = f.input :last_name, label: false
+      = f.input :email, label: false
+      = f.input :high_school, label: false
+      = f.input :grad_year, label: false
+      = f.input :sport, label: false
+      = f.input :height, label: false
+      = f.input :weight, label: false
+      = f.input :sat, label: false
+      = f.input :act, label: false
+      = f.input :gpa, label: false
+      = f.input :class_rank, label: false
+    .submit
       = f.button :submit, value: "Update Profile"
 

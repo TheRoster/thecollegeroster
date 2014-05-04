@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140503111855) do
     t.string   "high_school"
     t.integer  "grad_year"
     t.string   "sport"
-    t.text     "height"
+    t.string   "height"
     t.integer  "weight"
     t.integer  "sat"
     t.integer  "act"
