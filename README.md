@@ -16,3 +16,10 @@
   mysql -u developer -p     #connect as the developer
 
   scp [database name].sql [username]@[servername]:path/to/database/   #you can run this in reverse too
+
+  sudo bundle exec unicorn_rails -c /home/thecollegeroster/config/unicorn.rb -D -E production
+
+  sudo shutdown -h now
+  sudo reboot now
+
+  ps aux | grep unicorn (or any other server process)
