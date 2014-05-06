@@ -2,8 +2,15 @@ Rails.application.routes.draw do
 
   root 'athletes#new'
 
-  resources :athletes
+  resources :athletes do
+    member do
+        get :fans, :follows
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
   get '/signup',  to: 'athletes#new',  as: 'signup'
   get '/login', to: 'sessions#create', as: :login
   get '/logout', to: 'sessions#destroy', as: :logout

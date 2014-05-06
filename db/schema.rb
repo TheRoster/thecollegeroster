@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503111855) do
+ActiveRecord::Schema.define(version: 20140506012136) do
 
   create_table "athletes", force: true do |t|
     t.string   "first_name"
@@ -33,5 +33,16 @@ ActiveRecord::Schema.define(version: 20140503111855) do
   end
 
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
+
+  create_table "relationships", force: true do |t|
+    t.integer  "fan_id"
+    t.integer  "follower_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["fan_id", "follower_id"], name: "index_relationships_on_fan_id_and_follower_id", unique: true
+  add_index "relationships", ["fan_id"], name: "index_relationships_on_fan_id"
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
 end
