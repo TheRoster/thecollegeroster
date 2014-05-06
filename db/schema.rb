@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506012136) do
+ActiveRecord::Schema.define(version: 20140506022257) do
 
   create_table "athletes", force: true do |t|
     t.string   "first_name"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20140506012136) do
 
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
 
+  create_table "positions", force: true do |t|
+    t.string   "position_name"
+    t.integer  "sport_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "positions", ["sport_id"], name: "index_positions_on_sport_id"
+
   create_table "relationships", force: true do |t|
     t.integer  "fan_id"
     t.integer  "follower_id"
@@ -44,5 +53,23 @@ ActiveRecord::Schema.define(version: 20140506012136) do
   add_index "relationships", ["fan_id", "follower_id"], name: "index_relationships_on_fan_id_and_follower_id", unique: true
   add_index "relationships", ["fan_id"], name: "index_relationships_on_fan_id"
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "sports", force: true do |t|
+    t.string   "sport_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stats", force: true do |t|
+    t.string   "stat_name"
+    t.integer  "sport_id"
+    t.integer  "position_id"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stats", ["position_id"], name: "index_stats_on_position_id"
+  add_index "stats", ["sport_id"], name: "index_stats_on_sport_id"
 
 end
