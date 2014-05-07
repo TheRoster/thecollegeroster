@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506022257) do
+ActiveRecord::Schema.define(version: 20140507021438) do
 
   create_table "athletes", force: true do |t|
     t.string   "first_name"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 20140506022257) do
   end
 
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
+
+  create_table "games", force: true do |t|
+    t.integer  "athlete_id"
+    t.integer  "sport_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["athlete_id"], name: "index_games_on_athlete_id"
+  add_index "games", ["sport_id"], name: "index_games_on_sport_id"
 
   create_table "positions", force: true do |t|
     t.string   "position_name"

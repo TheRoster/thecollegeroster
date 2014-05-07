@@ -7,11 +7,11 @@ class Athlete < ActiveRecord::Base
 
   has_many :relationships, foreign_key: "fan_id", dependent: :destroy
   has_many :fans, through: :relationships
-
-  has_many :reverse_relationships, foreign_key: "follow_id",
-                                    class_name:  "Relationship",
-                                   dependent:   :destroy
+  has_many :reverse_relationships, foreign_key: "follow_id", class_name: "Relationship", dependent: :destroy
   has_many :follows, through: :reverse_relationships
+  has_many :sports
+  has_many :games
+
 
   has_secure_password
 
