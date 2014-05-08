@@ -55,14 +55,14 @@ ActiveRecord::Schema.define(version: 20140507021438) do
 
   create_table "relationships", force: true do |t|
     t.integer  "fan_id"
-    t.integer  "follower_id"
+    t.integer  "follow_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "relationships", ["fan_id", "follower_id"], name: "index_relationships_on_fan_id_and_follower_id", unique: true
+  add_index "relationships", ["fan_id", "follow_id"], name: "index_relationships_on_fan_id_and_follow_id", unique: true
   add_index "relationships", ["fan_id"], name: "index_relationships_on_fan_id"
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+  add_index "relationships", ["follow_id"], name: "index_relationships_on_follow_id"
 
   create_table "sports", force: true do |t|
     t.string   "sport_name"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140507021438) do
 
   create_table "stats", force: true do |t|
     t.string   "stat_name"
+    t.integer  "athlete_id"
     t.integer  "sport_id"
     t.integer  "position_id"
     t.integer  "value"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20140507021438) do
     t.datetime "updated_at"
   end
 
+  add_index "stats", ["athlete_id"], name: "index_stats_on_athlete_id"
   add_index "stats", ["position_id"], name: "index_stats_on_position_id"
   add_index "stats", ["sport_id"], name: "index_stats_on_sport_id"
 
