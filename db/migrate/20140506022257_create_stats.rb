@@ -4,6 +4,7 @@ class CreateStats < ActiveRecord::Migration
       t.string :stat_name
       t.references :athlete, index: true
       t.references :sport, index: true
+      t.references :game, index: true
       t.references :position, index: true
       t.integer :value
 

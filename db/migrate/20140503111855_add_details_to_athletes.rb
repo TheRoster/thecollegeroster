@@ -1,8 +1,6 @@
 class AddDetailsToAthletes < ActiveRecord::Migration
   def change
-    add_column :athletes, :high_school, :string
     add_column :athletes, :grad_year, :integer
-    add_column :athletes, :sport, :string
     add_column :athletes, :height, :string
     add_column :athletes, :weight, :integer
     add_column :athletes, :sat, :integer

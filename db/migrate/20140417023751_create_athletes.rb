@@ -8,5 +8,11 @@ class CreateAthletes < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    create_table :high_schools do |t|
+      t.belongs_to :athletes
+      t.string :high_school_name
+      t.timestamps
+    end
   end
 end

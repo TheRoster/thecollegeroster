@@ -21,9 +21,7 @@ ActiveRecord::Schema.define(version: 20140507021438) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
-    t.string   "high_school"
     t.integer  "grad_year"
-    t.string   "sport"
     t.string   "height"
     t.integer  "weight"
     t.integer  "sat"
@@ -37,12 +35,21 @@ ActiveRecord::Schema.define(version: 20140507021438) do
   create_table "games", force: true do |t|
     t.integer  "athlete_id"
     t.integer  "sport_id"
+    t.integer  "high_school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "games", ["athlete_id"], name: "index_games_on_athlete_id"
+  add_index "games", ["high_school_id"], name: "index_games_on_high_school_id"
   add_index "games", ["sport_id"], name: "index_games_on_sport_id"
+
+  create_table "high_schools", force: true do |t|
+    t.integer  "athletes_id"
+    t.string   "high_school_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "positions", force: true do |t|
     t.string   "position_name"
@@ -74,6 +81,7 @@ ActiveRecord::Schema.define(version: 20140507021438) do
     t.string   "stat_name"
     t.integer  "athlete_id"
     t.integer  "sport_id"
+    t.integer  "game_id"
     t.integer  "position_id"
     t.integer  "value"
     t.datetime "created_at"
@@ -81,6 +89,7 @@ ActiveRecord::Schema.define(version: 20140507021438) do
   end
 
   add_index "stats", ["athlete_id"], name: "index_stats_on_athlete_id"
+  add_index "stats", ["game_id"], name: "index_stats_on_game_id"
   add_index "stats", ["position_id"], name: "index_stats_on_position_id"
   add_index "stats", ["sport_id"], name: "index_stats_on_sport_id"
 
