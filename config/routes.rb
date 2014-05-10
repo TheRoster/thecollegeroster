@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   get 'welcome', to: 'athletes#new', as: 'welcome'
 
+
 end

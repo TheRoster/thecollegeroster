@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     athlete = Athlete.find_by_email(params[:email])
     if athlete && athlete.authenticate(params[:password])
       sign_in athlete
-      redirect_to athletes_url
+      redirect_to 
     else
       flash[:error] = 'Invalid email/password combination'
     end

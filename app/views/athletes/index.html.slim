@@ -6,4 +6,4 @@
       .card_player_profile
         p= link_to athlete_path(athlete)
           | View
-        / p= "Most recent stat #{@athlete.stats.first.stat_name @athlete.stats.first.value}"
+        p= athlete.athlete_last_stat

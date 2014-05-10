@@ -20,7 +20,7 @@ class AthletesController < ApplicationController
     @athlete = Athlete.new(athlete_params)
     if @athlete.save
       sign_in @athlete
-      flash[:success] = "Athlete #{@athlete.first_name} #{@athlete.last_name} was successfully created."
+      flash[:success] = "You were successfully created."
       redirect_to athletes_url
     else
       render :new
@@ -49,7 +49,11 @@ class AthletesController < ApplicationController
     end
 
     def athlete_params
-      params.require(:athlete).permit(:first_name, :last_name, :email, :high_school, :grad_year, :sport, :height, :weight, :sat, :act, :gpa, :class_rank, :password, :password_confirmation)
+      params.require(:athlete).permit(:first_name, :last_name, :email, :high_school,
+                                      :grad_year, :sport, :height, :weight, :sat,
+                                      :act, :gpa, :class_rank, :stat_id, :password,
+                                      :password_confirmation,
+                                      stat: params[:athlete][:stat].try(:keys))
     end
 
 end

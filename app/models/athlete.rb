@@ -15,6 +15,10 @@ class Athlete < ActiveRecord::Base
 
   has_secure_password
 
+  def athlete_last_stat
+    "#{stats.first.stat_name} #{stats.first.value}"
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -25,9 +29,6 @@ class Athlete < ActiveRecord::Base
 
   def Athlete.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
-  end
-
-  def feed
   end
 
   def fan?(other_athlete)
