@@ -14,14 +14,18 @@
         a= link_to edit_athlete_path(current_athlete)
           i.fa.fa-dribbble
           | Profile
+      / li
+        / a href="#"
+          / i.fa.fa-check
+          / | Verify
+      / li
+        / a= link_to athlete_stats_path(current_athlete)
+          / i.fa.fa-upload
+          / | Upload
       li
-        a href="#"
-          i.fa.fa-check
-          | Verify
-      li
-        a href="#"
-          i.fa.fa-upload
-          | Update
+        a= link_to athlete_stats_path(current_athlete)
+          i.fa.fa-signal
+          | Stats
     .header-signin
       p= "Hi, #{welcome_name current_athlete}"
       a= link_to "Sign Out", logout_path
