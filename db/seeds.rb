@@ -24,14 +24,8 @@ positions = Position.create([{id:1, position_name: 'Point Guard', sport: sports.
                              {id:4, position_name: 'Wide Receiver', sport: sports.second},
                              {id:5, position_name: 'Striker', sport: sports.last}])
 
-games = Game.create([{id:1, athlete: athletes.first, sport: sports.first},
-                     {id:2, athlete: athletes.second, sport: sports.first},
-                     {id:3, athlete: athletes.third, sport: sports.first},
-                     {id:4, athlete: athletes.fourth, sport: sports.first},
-                     {id:5, athlete: athletes.last, sport: sports.first}])
-
-stats = Stat.create([{id:1, stat_name: 'Points', athlete: athletes.first, sport: sports.first, position: positions.first, value: 23},
-                     {id:2, stat_name: 'Blocks', athlete: athletes.second, sport: sports.first, position: positions.second, value: 4},
-                     {id:3, stat_name: 'Yards Thrown', athlete: athletes.third, sport: sports.second, position: positions.third, value: 234},
-                     {id:4, stat_name: 'Receptions', athlete: athletes.fourth, sport: sports.second, position: positions.fourth, value: 93},
-                     {id:5, stat_name: 'Goals', athlete: athletes.last, sport: sports.last, position: positions.last, value: 1}])
+stats = Stat.create([{id:1, stat_name: 'Points', athlete: athletes.first, value: 23},
+                     {id:2, stat_name: 'Blocks', athlete: athletes.second, value: 4},
+                     {id:3, stat_name: 'Yards Thrown', athlete: athletes.third, value: 234},
+                     {id:4, stat_name: 'Receptions', athlete: athletes.fourth, value: 93},
+                     {id:5, stat_name: 'Goals', athlete: athletes.last, value: 1}])

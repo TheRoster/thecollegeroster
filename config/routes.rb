@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     member do
         get :fans, :follows
     end
-    resources :games, shallow: true
+    resources :stats, shallow: true
   end
 
   resources :sessions, only: [:new, :create, :destroy]

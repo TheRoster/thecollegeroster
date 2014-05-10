@@ -14,5 +14,6 @@ class CreateAthletes < ActiveRecord::Migration
       t.string :high_school_name
       t.timestamps
     end
+
   end
 end

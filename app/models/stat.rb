@@ -1,6 +1,7 @@
 class Stat < ActiveRecord::Base
-  belongs_to :sport
+  validates :athlete_id, presence: true
+
+  default_scope -> { order('created_at DESC') }
+
   belongs_to :athlete
-  belongs_to :position
-  belongs_to :game
 end

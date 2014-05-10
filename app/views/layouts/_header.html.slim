@@ -18,12 +18,12 @@
         / a href="#"
           / i.fa.fa-check
           / | Verify
+      / li
+        / a= link_to athlete_stats_path(current_athlete)
+          / i.fa.fa-upload
+          / | Upload
       li
-        a= link_to new_athlete_game_path(current_athlete)
-          i.fa.fa-upload
-          | Upload
-      li
-        a= link_to athlete_games_path(current_athlete)
+        a= link_to athlete_stats_path(current_athlete)
           i.fa.fa-signal
           | Stats
     .header-signin

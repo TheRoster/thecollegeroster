@@ -23,8 +23,19 @@ module SessionsHelper
     @current_athlete ||= Athlete.find_by(remember_token: remember_token)
   end
 
+  def signed_in?
+    !current_athlete.nil?
+  end
+
   def athlete_signed_in?
     current_athlete.present?
+  end
+
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to login_path, notice: "Please log in."
+    end
   end
 
 end
