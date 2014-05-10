@@ -4,6 +4,7 @@ class StatsController < ApplicationController
   end
 
   def show
+    @stat = Stat.find(params[:id])
   end
 
   def new
@@ -26,6 +27,10 @@ class StatsController < ApplicationController
   end
 
   def destroy
+    @stat = Stat.find(params[:id])
+    @stat.destroy
+
+    redirect_to athletes_url
   end
 
   private
