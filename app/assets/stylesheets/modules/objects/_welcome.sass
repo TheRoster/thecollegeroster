@@ -1,5 +1,4 @@
 .welcome-page
-  @include linear-gradient(top, $blue,$alt-blue-3, $white)
   min-height: 100%
   min-width: 100%
   position: fixed
@@ -10,16 +9,18 @@
   padding: 20px
 
 .content
-  margin-top: 50px
+  margin-top: 100px
   display: flex
   flex-direction: column
   align-items: center
   .content-header
     font-size: 50px
-    color: $white
+    color: darken($blue, 10%)
     margin: 0px
     padding: 0px
+    margin-bottom: 50px
   .content-sub-header
-    color: darken($alt-blue, 20%)
+    margin-top: 50px
+    color: darken($alt-blue, 10%)
     max-width: 600px
     text-align: center
