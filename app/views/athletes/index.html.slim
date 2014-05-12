@@ -1,10 +1,9 @@
 .feed
   - @athletes.each do |athlete|
-    .card
-      .card_player
-        p= athlete.full_name
-      .card_player_profile
-        p= link_to athlete_path(athlete)
-          | View
-        p Last Stat:
-        p= athlete.athlete_last_stat
+    =link_to athlete_path(athlete)
+      .card
+        .card_player
+          p= athlete.full_name
+        .card_player_profile
+          p Last Stat:
+          p= athlete.athlete_last_stat
