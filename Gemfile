@@ -10,6 +10,7 @@ gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass'
 gem 'smarter_csv'
+gem "select2-rails"
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
