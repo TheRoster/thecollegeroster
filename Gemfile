@@ -9,7 +9,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass'
-# gem 'roster-sass', git: 'git@github.com:TheRoster/roster-sass.git'
+gem 'smarter_csv'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
