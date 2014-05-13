@@ -30,7 +30,7 @@ stats = Stat.create([{id:1, stat_name: 'Points', athlete: athletes.first, value:
                      {id:4, stat_name: 'Receptions', athlete: athletes.fourth, value: 93},
                      {id:5, stat_name: 'Goals', athlete: athletes.last, value: 1}])
 
-high_schools = HighSchool.create ([{ id:1, high_school_name: 'Alan C Pope High School', city: 'Marietta', state: 'GA',
-                                     id:2, high_school_name: 'Jupiter High School', city: 'Los Angeles', state: 'CA',
-                                     id:3, high_school_name: 'Upper East High School', city: 'New York City', state: 'NY',
-                                     id:4, high_school_name: 'Skateboard High School', city: 'Portland', state: 'OR'}])
+high_schools = HighSchool.create ([{ id:1, high_school_name: 'Alan C Pope High School', city: 'Marietta', state: 'GA'},
+                                   { id:2, high_school_name: 'Jupiter High School', city: 'Los Angeles', state: 'CA'},
+                                   { id:3, high_school_name: 'Upper East High School', city: 'New York City', state: 'NY'},
+                                   { id:4, high_school_name: 'Skateboard High School', city: 'Portland', state: 'OR'}])

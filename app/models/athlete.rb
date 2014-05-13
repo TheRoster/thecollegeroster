@@ -12,6 +12,8 @@ class Athlete < ActiveRecord::Base
   has_many :sports
   has_many :stats,  dependent: :destroy
 
+  belongs_to :high_school
+
 
   has_secure_password
 
