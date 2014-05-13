@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140513010514) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
+    t.integer  "high_school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140513010514) do
     t.integer  "class_rank"
   end
 
+  add_index "athletes", ["high_school_id"], name: "index_athletes_on_high_school_id"
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
 
   create_table "high_schools", force: true do |t|

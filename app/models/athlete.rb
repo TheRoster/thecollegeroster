@@ -17,7 +17,11 @@ class Athlete < ActiveRecord::Base
   has_secure_password
 
   def athlete_last_stat
-    "#{stats.first.stat_name} #{stats.first.value}"
+    if stats.first.nil?
+      "No stats yet!"
+    else
+      "#{stats.first.stat_name} #{stats.first.value}"
+    end
   end
 
   def full_name

@@ -5,6 +5,7 @@ class CreateAthletes < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :password_digest
+      t.references :high_school, index: true
 
       t.timestamps
     end
