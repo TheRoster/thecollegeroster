@@ -2,8 +2,20 @@
   - @athletes.each do |athlete|
     =link_to athlete_path(athlete)
       .card
-        .card_player
-          p= athlete.full_name
-        .card_player_profile
-          p Last Stat:
+        .card_image
+          i.fa.fa-picture-o
+          p.picture-content Profile Picture Not Set Yet
+          .card_player
+            p= athlete.full_name
+            p Some High School
+        .card_stat
+          p.label Recent Highlight
           p= athlete.athlete_last_stat
+        .card_player_profile
+          p.label Profile
+          .profile_column_1
+            p Basketball
+            p Guard
+          .profile_column_2
+            p= athlete.height
+            p= athlete.weight
