@@ -8,4 +8,5 @@ module AthletesHelper
     return "" unless athlete
     "#{athlete.first_name} #{athlete.last_name[0]}"
   end
+
 end

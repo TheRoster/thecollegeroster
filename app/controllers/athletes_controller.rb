@@ -2,7 +2,7 @@ class AthletesController < ApplicationController
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
 
   def index
-    @athletes = Athlete.all
+    @athletes = Athlete.all.includes(:high_school)
   end
 
   def show
@@ -52,8 +52,7 @@ class AthletesController < ApplicationController
       params.require(:athlete).permit(:first_name, :last_name, :email, :high_school,
                                       :grad_year, :sport, :height, :weight, :sat,
                                       :act, :gpa, :class_rank, :stat_id, :password,
-                                      :password_confirmation,
-                                      stat: params[:athlete][:stat].try(:keys))
+                                      :password_confirmation)
     end
 
 end

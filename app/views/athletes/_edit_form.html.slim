@@ -15,7 +15,7 @@
       = f.input :grad_year, label: false
       = f.input :height, label: false
       = f.input :weight, label: false
-      = f.input :high_school, label: false
+      = f.association :high_school, value_method: :id
     .submit
       = f.button :submit, value: "Update Profile"
 

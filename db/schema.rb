@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140513010514) do
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
 
   create_table "high_schools", force: true do |t|
-    t.string "high_school_name"
+    t.string "name"
     t.string "city"
     t.string "state"
   end

@@ -4,10 +4,4 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
-  def render_flash_for
-  end
-
-  def render_flash_now_for
-  end
-
 end
