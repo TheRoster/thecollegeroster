@@ -1,7 +1,6 @@
-.form
-  = form_for :stat, :url => {:action => :create} do |f|
-    = f.label :stat_name
-    = f.text_field :stat_name
-    = f.label :value
-    = f.number_field :value
-    = f.submit
+h1 Enter your stat
+
+=simple_form_for :stat, url: athletes_path do |f|
+  =f.input :stat_name
+  =f.input :value
+  =f.submit

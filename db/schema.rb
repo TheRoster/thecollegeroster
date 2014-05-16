@@ -69,11 +69,13 @@ ActiveRecord::Schema.define(version: 20140513010514) do
   create_table "stats", force: true do |t|
     t.string   "stat_name"
     t.integer  "athlete_id"
+    t.integer  "sport_id"
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "stats", ["athlete_id"], name: "index_stats_on_athlete_id"
+  add_index "stats", ["sport_id"], name: "index_stats_on_sport_id"
 
 end

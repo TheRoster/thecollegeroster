@@ -14,6 +14,8 @@ class Athlete < ActiveRecord::Base
 
   belongs_to :high_school
 
+  accepts_nested_attributes_for :stats
+
   has_secure_password
 
   def athlete_last_stat
