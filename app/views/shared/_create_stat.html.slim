@@ -1,11 +1,23 @@
-h1 Enter your stat
-.create-stat
-  =simple_form_for :stat, url: athlete_stats_path do |f|
-    =f.input :date_played, as: :date
-    =f.input :points
-    =f.input :rebounds
-    =f.input :assists
-    =f.input :blocks
-    =f.input :turnovers
-    =f.input :minutes_played
-    =f.submit
+.athlete-stats
+  .container-half.stat-create
+    h1.stat-header Log Your Last Stat
+    .stat-form
+      =simple_form_for :stat, url: athlete_stats_path do |f|
+        .inputs
+          =f.input :date_played, as: :date, wrapper_html: { class: 'stat-date' }
+          =f.input :points, wrapper_html: { class: 'stat-input' }
+          =f.input :rebounds, wrapper_html: { class: 'stat-input' }
+          =f.input :assists, wrapper_html: { class: 'stat-input' }
+          =f.input :blocks, wrapper_html: { class: 'stat-input' }
+          =f.input :turnovers, wrapper_html: { class: 'stat-input' }
+          =f.input :minutes_played, wrapper_html: { class: 'stat-input' }
+          =f.button :submit, class: 'stat-submit'
+
+  .container-half.stat-feed
+    h1.stat-header Stat Feed
+    .stat-index
+      - if @stats.nil?
+        h2 No stats yet - create one!
+      - else
+        - @stats.each do |stat|
+          = render "stats/stat", stat: stat

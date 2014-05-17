@@ -1,0 +1,51 @@
+.athlete-stats
+  display: flex
+  flex-direction: row
+  justify-content: center
+
+.stat-create, .stat-feed
+  flex-direction: column
+  align-items: center
+
+.stat-header
+  font-weight: 200
+  color: $blue
+
+.stat-form
+  padding: 20px
+  .inputs
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+  form
+    display: flex
+    flex-wrap: wrap
+    border-radius: 5px
+    background-color: $light-blue
+  .stat-date, .stat-submit
+    width: 100%
+    margin: 20px
+  .stat-input
+    display: flex
+    flex-direction: column
+    margin: 20px
+    input
+      height: 100px
+      text-align: center
+      box-shadow: inset 0 0 5px $blue
+      width: 100px
+      border: none
+      font-size: 32px
+      color: darken($blue, 20%)
+    label
+      text-align: center
+      margin-bottom: 10px
+      color: darken($blue, 20%)
+  .stat-submit
+    background-color: $blue
+    color: $white
+  .stat-date
+    label
+      margin: 0px 10px
+      color: darken($blue, 20%)

@@ -1,7 +1,10 @@
 class StatsController < ApplicationController
 
+  def index
+    @stats = current_athlete.stats.order(created_at: :desc)
+  end
+
   def show
-    @stat = Stat.find(params[:id])
   end
 
   def new
@@ -34,8 +37,8 @@ class StatsController < ApplicationController
 
     def stat_params
       params.require(:stat).permit(:points, :rebounds, :assists, :blocks,
-                                   :turnovers, :minutes_played, :date_played
-                                  )
+                                   :turnovers, :minutes_played, :date_played,
+                                   :athlete_id)
     end
 
     def correct_athlete
