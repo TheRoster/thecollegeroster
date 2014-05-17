@@ -1,6 +1,11 @@
 h1 Enter your stat
-
-=simple_form_for :stat, url: athletes_path do |f|
-  =f.input :stat_name, collection: ['Points', 'Rebounds', 'Assists', 'Steals', 'Blocks', 'Minutes Played']
-  =f.input :value
-  =f.submit
+.create-stat
+  =simple_form_for :stat, url: athlete_stats_path do |f|
+    =f.input :date_played, as: :date
+    =f.input :points
+    =f.input :rebounds
+    =f.input :assists
+    =f.input :blocks
+    =f.input :turnovers
+    =f.input :minutes_played
+    =f.submit

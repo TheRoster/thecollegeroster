@@ -1,6 +1,5 @@
 class StatsController < ApplicationController
 
-
   def show
     @stat = Stat.find(params[:id])
   end
@@ -34,7 +33,9 @@ class StatsController < ApplicationController
   private
 
     def stat_params
-      params.require(:stat).permit(:stat_name, :value)
+      params.require(:stat).permit(:points, :rebounds, :assists, :blocks,
+                                   :turnovers, :minutes_played, :date_played
+                                  )
     end
 
     def correct_athlete

@@ -52,8 +52,8 @@ class AthletesController < ApplicationController
       params.require(:athlete).permit(:first_name, :last_name, :email,
                                       :grad_year, :height, :weight,
                                       :password, :password_confirmation,
-                                      :high_school_id, :sport_id, :position_id
-                                     )
+                                      :high_school_id, :sport_id, :position_id,
+                                      :stat)
     end
 
 end
