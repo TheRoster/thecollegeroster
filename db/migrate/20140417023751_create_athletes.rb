@@ -6,6 +6,8 @@ class CreateAthletes < ActiveRecord::Migration
       t.string :email
       t.string :password_digest
       t.references :high_school, index: true
+      t.references :sport, index: true
+      t.references :position, index: true
 
       t.timestamps
     end

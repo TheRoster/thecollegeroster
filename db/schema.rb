@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140513010514) do
     t.string   "email"
     t.string   "password_digest"
     t.integer  "high_school_id"
+    t.integer  "sport_id"
+    t.integer  "position_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
@@ -32,7 +34,9 @@ ActiveRecord::Schema.define(version: 20140513010514) do
   end
 
   add_index "athletes", ["high_school_id"], name: "index_athletes_on_high_school_id"
+  add_index "athletes", ["position_id"], name: "index_athletes_on_position_id"
   add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
+  add_index "athletes", ["sport_id"], name: "index_athletes_on_sport_id"
 
   create_table "high_schools", force: true do |t|
     t.string "name"
@@ -67,15 +71,23 @@ ActiveRecord::Schema.define(version: 20140513010514) do
   end
 
   create_table "stats", force: true do |t|
-    t.string   "stat_name"
+    t.integer  "points"
+    t.integer  "rebounds"
+    t.integer  "assists"
+    t.integer  "steals"
+    t.integer  "blocks"
+    t.integer  "turnovers"
+    t.integer  "minutes_played"
+    t.date     "date_played"
     t.integer  "athlete_id"
     t.integer  "sport_id"
-    t.integer  "value"
+    t.integer  "position_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "stats", ["athlete_id"], name: "index_stats_on_athlete_id"
+  add_index "stats", ["position_id"], name: "index_stats_on_position_id"
   add_index "stats", ["sport_id"], name: "index_stats_on_sport_id"
 
 end
