@@ -9,12 +9,15 @@ class Athlete < ActiveRecord::Base
   has_many :fans, through: :relationships
   has_many :reverse_relationships, foreign_key: "follow_id", class_name: "Relationship", dependent: :destroy
   has_many :follows, through: :reverse_relationships
-  has_many :sports
   has_many :stats,  dependent: :destroy
 
   belongs_to :high_school
+  belongs_to :sport
+  belongs_to :position
 
-  accepts_nested_attributes_for :stats
+  accepts_nested_attributes_for :high_school
+  accepts_nested_attributes_for :sport
+  accepts_nested_attributes_for :position
 
   has_secure_password
 
@@ -48,6 +51,18 @@ class Athlete < ActiveRecord::Base
 
   def unfollow!(other_athlete)
     relationships.find_by(follow_id: other_athlete.id).destroy
+  end
+
+  def high_school_name
+    HighSchool.name
+  end
+
+  def sport_name
+    @sport_name ||= Sport.name
+  end
+
+  def position_name
+    @position_name ||= Position.name
   end
 
   private

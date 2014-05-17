@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20140513010514) do
   end
 
   create_table "positions", force: true do |t|
-    t.string   "position_name"
+    t.string   "name"
     t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20140513010514) do
   add_index "relationships", ["follow_id"], name: "index_relationships_on_follow_id"
 
   create_table "sports", force: true do |t|
-    t.string   "sport_name"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

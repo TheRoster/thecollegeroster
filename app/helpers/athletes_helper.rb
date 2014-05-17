@@ -9,4 +9,7 @@ module AthletesHelper
     "#{athlete.first_name} #{athlete.last_name[0]}"
   end
 
+  def athlete_high_school athlete
+    "#{athlete.high_school_name}"
+  end
 end

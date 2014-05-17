@@ -7,15 +7,15 @@
           p.picture-content Profile Picture Not Set Yet
           .card_player
             p= athlete.full_name
-            p= athlete.high_school
+            p= athlete.athlete_high_school
         .card_stat
           p.label Recent Highlight
-          p= athlete.athlete_last_stat
+          / p= athlete.athlete_last_stat
         .card_player_profile
           p.label Profile
           .profile_column_1
-            p Basketball
-            p Guard
+            p= athlete.sport_name
+            p= athlete.position_name
           .profile_column_2
             p= athlete.height
             p= athlete.weight

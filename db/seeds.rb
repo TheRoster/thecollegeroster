@@ -13,14 +13,14 @@ athletes = Athlete.create([{ id: 1, first_name: 'Jim', last_name: 'Robinson', em
                              { id: 4, first_name: 'Peter', last_name: 'Franconi', email: 'peterfranconi@gmail.com', password_digest: 'password' },
                              { id: 5, first_name: 'Genna', last_name: 'Franconi', email: 'gennafranconi@gmail.com', password_digest: 'password' }])
 
-sports = Sport.create([{id: 1, sport_name: 'Basketball'}])
+sports = Sport.create([{id: 1, name: 'Basketball'}])
 
 
-positions = Position.create([{id:1, position_name: 'Point Guard', sport: sports.first},
-                             {id:2, position_name: 'Center', sport: sports.first},
-                             {id:3, position_name: 'Shooting Guard', sport: sports.first},
-                             {id:4, position_name: 'Small Forward', sport: sports.first},
-                             {id:5, position_name: 'Power Forward', sport: sports.first}])
+positions = Position.create([{id:1, name: 'Point Guard', sport: sports.first},
+                             {id:2, name: 'Center', sport: sports.first},
+                             {id:3, name: 'Shooting Guard', sport: sports.first},
+                             {id:4, name: 'Small Forward', sport: sports.first},
+                             {id:5, name: 'Power Forward', sport: sports.first}])
 
 high_schools = HighSchool.create ([{ id:1, name: 'Alan C Pope High School', city: 'Marietta', state: 'GA'},
                                    { id:2, name: 'Jupiter High School', city: 'Los Angeles', state: 'CA'},
