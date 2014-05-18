@@ -53,7 +53,7 @@ class AthletesController < ApplicationController
                                       :grad_year, :height, :weight,
                                       :password, :password_confirmation,
                                       :high_school_id, :sport_id, :position_id,
-                                      :stat)
+                                      :stat, :avatar)
     end
 
 end

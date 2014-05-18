@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513010514) do
+ActiveRecord::Schema.define(version: 20140517202145) do
 
   create_table "athletes", force: true do |t|
     t.string   "first_name"
@@ -29,8 +29,12 @@ ActiveRecord::Schema.define(version: 20140513010514) do
     t.integer  "weight"
     t.integer  "sat"
     t.integer  "act"
-    t.decimal  "gpa",             precision: 2, scale: 1
+    t.decimal  "gpa",                 precision: 2, scale: 1
     t.integer  "class_rank"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "athletes", ["high_school_id"], name: "index_athletes_on_high_school_id"

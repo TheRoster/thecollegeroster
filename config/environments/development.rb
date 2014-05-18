@@ -37,4 +37,8 @@ Rails.application.configure do
 
   # config.sass.line_comments = false
   # config.sass.cache = false
+
+  # Paperclip params
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
 end
