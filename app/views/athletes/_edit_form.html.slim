@@ -10,7 +10,7 @@
             li= message
     .image
       h4 Preview:
-      / = image_tag @athlete.avatar.url(:medium), :id => "preview"
+      = image_tag @athlete.avatar.url(:medium), :id => "preview"
       = f.file_field :avatar
     .confirm
       = f.input :first_name, label: false
