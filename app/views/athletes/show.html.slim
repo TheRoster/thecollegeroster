@@ -1,10 +1,14 @@
 .container
   .section
-    p
-      strong First Name: 
-      = @athlete.first_name
-    p
-      strong Last Name: 
-      = @athlete.last_name
+    .card
+      .card_image
+        - if @athlete.avatar?
+          = image_tag @athlete.avatar.url(:medium)
+          = @athlete.full_name
+        - else
+          i.fa.fa-picture-o
+          p.picture-content Profile Picture Not Set Yet
+          .card_player
+            p= @athlete.full_name
 
-    a= link_to "Follow"
+        a= link_to "Follow"

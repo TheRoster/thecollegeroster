@@ -3,10 +3,13 @@
     =link_to athlete_path(athlete)
       .card
         .card_image
-          i.fa.fa-picture-o
-          p.picture-content Profile Picture Not Set Yet
-          .card_player
-            p= athlete.full_name
+          - if athlete.avatar?
+            = image_tag athlete.avatar.url(:medium)
+          - else
+            i.fa.fa-picture-o
+            p.picture-content Profile Picture Not Set Yet
+            .card_player
+              p= athlete.full_name
             / p= athlete.athlete_high_school
         .card_stat
           p.label Recent Highlight
