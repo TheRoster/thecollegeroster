@@ -15,6 +15,9 @@ class Athlete < ActiveRecord::Base
   belongs_to :sport
   belongs_to :position
 
+  delegate :name, to: :high_school
+  delegate :name, to: :stat
+
   accepts_nested_attributes_for :high_school
   accepts_nested_attributes_for :sport
   accepts_nested_attributes_for :position
