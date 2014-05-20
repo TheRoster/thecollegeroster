@@ -59,18 +59,6 @@ class Athlete < ActiveRecord::Base
     relationships.find_by(follow_id: other_athlete.id).destroy
   end
 
-  def high_school_name
-    HighSchool.name
-  end
-
-  def sport_name
-    @sport_name ||= Sport.name
-  end
-
-  def position_name
-    @position_name ||= Position.name
-  end
-
   private
 
   def create_remember_token

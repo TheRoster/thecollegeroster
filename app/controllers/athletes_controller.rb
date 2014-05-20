@@ -6,6 +6,10 @@ class AthletesController < ApplicationController
   end
 
   def show
+    @athlete = Athlete.find(params[:id])
+    # @high_school = @athlete.high_school.name
+    # @sport = @athlete.sport.name
+    # @position = @athlete.position.name
   end
 
   def new
