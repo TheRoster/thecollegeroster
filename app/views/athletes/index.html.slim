@@ -8,17 +8,15 @@
           - else
             i.fa.fa-picture-o
             p.picture-content Profile Picture Not Set Yet
-            .card_player
-              p= athlete.full_name
-              / p= athlete.@high_school
+          .card_player
+            p= athlete.full_name
+            p= athlete.high_school
         .card_stat
-          p.label Recent Highlight
-          / p= athlete.athlete_last_stat
+          = render 'shared/recent_stat'
         .card_player_profile
-          p.label Profile
           .profile_column_1
-            / p= athlete.sport_name
-            / p= athlete.position_name
+            p= athlete.sport
+            p= athlete.position
           .profile_column_2
             p= athlete.height
             p= athlete.weight

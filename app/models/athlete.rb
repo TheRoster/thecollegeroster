@@ -5,18 +5,15 @@ class Athlete < ActiveRecord::Base
   validates :first_name, :last_name, :email, presence: true
   validates_uniqueness_of :email
 
-  has_many :relationships, foreign_key: "fan_id", dependent: :destroy
-  has_many :fans, through: :relationships
-  has_many :reverse_relationships, foreign_key: "follow_id", class_name: "Relationship", dependent: :destroy
-  has_many :follows, through: :reverse_relationships
+  # has_many :relationships, foreign_key: "fan_id", dependent: :destroy
+  # has_many :fans, through: :relationships
+  # has_many :reverse_relationships, foreign_key: "follow_id", class_name: "Relationship", dependent: :destroy
+
   has_many :stats,  dependent: :destroy
 
   belongs_to :high_school
   belongs_to :sport
   belongs_to :position
-
-  delegate :name, to: :high_school
-  delegate :name, to: :stat
 
   accepts_nested_attributes_for :high_school
   accepts_nested_attributes_for :sport
@@ -31,7 +28,7 @@ class Athlete < ActiveRecord::Base
     if stats.first.nil?
       "No stats yet!"
     else
-      "#{stats.first.stat_name} #{stats.first.value}"
+      "#{stats.last}"
     end
   end
 
@@ -58,6 +55,7 @@ class Athlete < ActiveRecord::Base
   def unfollow!(other_athlete)
     relationships.find_by(follow_id: other_athlete.id).destroy
   end
+
 
   private
 

@@ -1,5 +1,4 @@
 class AthletesController < ApplicationController
-  before_action :set_athlete, only: [:show, :edit, :update, :destroy]
 
   def index
     @athletes = Athlete.all
@@ -7,13 +6,6 @@ class AthletesController < ApplicationController
 
   def show
     @athlete = Athlete.find(params[:id])
-    # @high_school = @athlete.high_school.name
-    # @sport = @athlete.sport.name
-    # @position = @athlete.position.name
-  end
-
-  def new
-    @athlete = Athlete.new
   end
 
   def edit
@@ -48,9 +40,6 @@ class AthletesController < ApplicationController
   end
 
   private
-    def set_athlete
-      @athlete = Athlete.find(params[:id])
-    end
 
     def athlete_params
       params.require(:athlete).permit(:first_name, :last_name, :email,
