@@ -10,13 +10,13 @@
             p.picture-content Profile Picture Not Set Yet
           .card_player
             p= athlete.full_name
-            p= athlete.high_school
+            p= athlete.high_school.name
         .card_stat
           = render 'shared/recent_stat'
         .card_player_profile
           .profile_column_1
-            p= athlete.sport
-            p= athlete.position
+            p= athlete.sport.name
+            p= athlete.position.name
           .profile_column_2
             p= athlete.height
             p= athlete.weight

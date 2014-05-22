@@ -1,7 +1,7 @@
 class AthletesController < ApplicationController
 
   def index
-    @athletes = Athlete.includes(:high_school, :sport, :position).all
+    @athletes = Athlete.joins(:high_school, :sport, :position).all
   end
 
   def show
