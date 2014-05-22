@@ -5,10 +5,6 @@ class Athlete < ActiveRecord::Base
   validates :first_name, :last_name, :email, presence: true
   validates_uniqueness_of :email
 
-  # has_many :relationships, foreign_key: "fan_id", dependent: :destroy
-  # has_many :fans, through: :relationships
-  # has_many :reverse_relationships, foreign_key: "follow_id", class_name: "Relationship", dependent: :destroy
-
   has_many :stats,  dependent: :destroy
 
   belongs_to :high_school
