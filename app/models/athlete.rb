@@ -1,5 +1,5 @@
 class Athlete < ActiveRecord::Base
-  before_save { self.email = email.downcase }
+  before_save :set_email_to_lowercase
   before_create :create_remember_token
 
   validates :first_name, :last_name, :email, presence: true
@@ -42,6 +42,10 @@ class Athlete < ActiveRecord::Base
 
 
   private
+
+  def set_email_to_lowercase
+    self.email = email.downcase
+  end
 
   def create_remember_token
     self.remember_token = Athlete.digest(Athlete.new_remember_token)
