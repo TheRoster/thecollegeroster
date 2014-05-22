@@ -44,18 +44,6 @@ class Athlete < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-  def fan?(other_athlete)
-    relationships.find_by(fan_id: other_athlete.id)
-  end
-
-  def follow!(other_athlete)
-    relationships.create!(follow_id: other_athlete.id)
-  end
-
-  def unfollow!(other_athlete)
-    relationships.find_by(follow_id: other_athlete.id).destroy
-  end
-
 
   private
 
