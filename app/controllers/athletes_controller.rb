@@ -8,6 +8,10 @@ class AthletesController < ApplicationController
     @athlete = Athlete.find(params[:id])
   end
 
+  def new
+    @athlete = Athlete.new
+  end
+
   def edit
     @athlete = Athlete.find(params[:id])
   end
