@@ -1,3 +1,5 @@
+.left-nav-feed
+
 .athlete-stats
   .container-half.stat-create
     h1.stat-header Log Your Last Stat
@@ -13,11 +15,4 @@
           =f.input :minutes_played, wrapper_html: { class: 'stat-input' }
           =f.button :submit, class: 'stat-submit'
 
-  .container-half.stat-feed
-    h1.stat-header Stat Feed
-    .stat-index
-      - if @stats.nil?
-        h2 No stats yet - create one!
-      - else
-        - @stats.each do |stat|
-          = render "stats/stat", stat: stat
+
