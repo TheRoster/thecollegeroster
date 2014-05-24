@@ -1,1 +1,22 @@
 table.stat-table
+  thead
+    th Date Played
+    th Points
+    th Rebounds
+    th Assists
+    th Turnovers
+    th Blocks
+    th Steals
+    th Minutes Played
+  tbody
+    - @stats.each do |stat|
+      tr
+        td= stat.date_played
+        td= stat.points
+        td= stat.rebounds
+        td= stat.assists
+        td= stat.turnovers
+        td= stat.blocks
+        td= stat.steals
+        td= stat.minutes_played
+
