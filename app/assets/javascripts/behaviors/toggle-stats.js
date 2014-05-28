@@ -1,4 +1,5 @@
-$('.left-nav').click(function() {
-  $(this).toggleClass( 'left-nav-feed' );
+(function() {
+  $('.left-nav').click(function() {
+    $(this).toggleClass( 'left-nav-feed' );
+  });
 });
-
