@@ -148,8 +148,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   30% {
-    -webkit-transform: scaleX(1.25) scaleY(0.75);
-    transform: scaleX(1.25) scaleY(0.75);
+    -webkit-transform: scaleX(1.1) scaleY(0.9);
+    transform: scaleX(1.1) scaleY(0.9);
   }
 
   40% {
@@ -158,8 +158,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   60% {
-    -webkit-transform: scaleX(1.15) scaleY(0.85);
-    transform: scaleX(1.15) scaleY(0.85);
+    -webkit-transform: scaleX(1.1) scaleY(0.9);
+    transform: scaleX(1.1) scaleY(0.9);
   }
 
   100% {

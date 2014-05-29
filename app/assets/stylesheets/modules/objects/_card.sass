@@ -23,18 +23,37 @@
     font-size: 64px
   p
     margin: 0px
+    color: $black
+  img
+    opacity: .2
+    position: relative
+    min-height: 300px
+    max-width: 350px
 
-.card_stat, .card_player_profile
+.card_player
+  bottom: 130px
+  position: relative
+
+.card_stat
   padding: 10px
 
 .card_stat
   max-height: 80px
-  color: darken($blue, 10%)
+  color: lighten($black, 10%)
   background-color: $grey
+  font-family: 'Droid Sans'
+  font-size: $medium-font
+  padding: 0px 10px
 
 .card_player_profile
   max-height: 105px
   color: $light-grey
-  background-color: darken($blue, 5%)
+  background-color: $black
+  display: flex
+  flex-direction: row
+  justify-content: space-between
 
-
+.profile_column_1, .profile_column_2
+  padding: 0px 10px
+  font-family: 'Droid Sans'
+  font-size: $medium-font

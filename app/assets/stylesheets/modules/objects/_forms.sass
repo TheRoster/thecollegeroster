@@ -7,15 +7,16 @@
     padding: 5px
     border: none
     height: 45px
-    border: 1px solid lighten($alt-blue, 30%)
+    border: 1px solid $dark-grey
+    border-bottom: none
   .name
     display: flex
     flex-direction: row
   .first-name, .last-name
-    border-color: lighten($blue, 10%)
     width: 100%
   .last-name
     border-radius: 0px 5px 0px 0px
+    border-left: none !important
   .first-name
     border-radius: 5px 0px 0px 0px
   .confirm
@@ -27,11 +28,11 @@
     input
       border-radius: 0px 0px 5px 5px
       width: 100%
-      background-color: $blue
+      background-color: $black
       color: $white
       height: 60px
       &:hover
-        background-color: $blue
+        background-color: lighten($black, 5%)
         color: $white
 
 .signin-form
@@ -40,7 +41,7 @@
   margin-top: 100px
 
 .fieldset
-  border: 1px solid lighten($alt-blue, 20%)
+  border: 1px solid $dark-grey
   margin: 4px
   padding: 25px
   display: flex

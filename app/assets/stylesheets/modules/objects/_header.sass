@@ -3,40 +3,42 @@
   display: flex
   flex-direction: row
   justify-content: space-between
-  background-color: $light-grey
+  background-color: darken($dark-grey, 40%)
   position: fixed
   width: 100%
   z-index: 1000
 
 .header-signin
   padding: 5px 10px
-  color: $blue
+  color: $white
 
 .header-logo
   padding: 5px
   a
     display: flex
     flex-direction: row
-    color: $blue
+    color: $white
     font-weight: 100
     p
       margin-top: 20px
 
 .header-signin
-  border-left: 1px solid $white
+  border-left: 1px solid rgba(255,255,255, 0.3)
   p
     display: inline-block
     padding-right: 20px
   a
-    color: $blue
+    color: $white
 
 .header-nav
-  margin-right: 13%
   li
     display: inline-block
     margin: 5px
     a
       font-size: 12px
+      color: $white
+      &:hover
+        color: $grey
     i
       font-size: 24px
       padding: 5px
