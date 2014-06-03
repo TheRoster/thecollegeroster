@@ -9,9 +9,13 @@ gem 'bourbon'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass'
-gem 'smarter_csv'
 gem "select2-rails"
 gem "paperclip", "~> 4.1"
+
+# Ember gems
+gem 'ember-rails'
+# gem 'ember-source', '1.5.0'
+
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
