@@ -1,5 +1,7 @@
 ## The College Roster
   Welcome to the College Roster. Interested? Contact Peter Franconi: peter.franconi@gmail.com
+  
+  Peter is really cool
 
 ## Common server command line tools
 
