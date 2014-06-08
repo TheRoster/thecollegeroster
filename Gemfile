@@ -13,7 +13,7 @@ gem "select2-rails"
 gem "paperclip", "~> 4.1"
 
 # Ember gems
-gem 'ember-rails'
+# gem 'ember-rails'
 # gem 'ember-source', '1.5.0'
 
 
