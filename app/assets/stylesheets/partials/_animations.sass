@@ -29,3 +29,26 @@
 
 .bounce
   @include animation(bounce 2s infinite)
+
+//header animation
+
+.headroom, .header
+  -moz-transition: -moz-transform 200ms linear
+  -o-transition: -o-transform 200ms linear
+  -webkit-transition: -webkit-transform 200ms linear
+  transition: transform 200ms linear
+
+.headroom--pinned
+  -moz-transform: translatey(0%)
+  -ms-transform: translatey(0%)
+  -o-transform: translatey(0%)
+  -webkit-transform: translatey(0%)
+  transform: translatey(0%)
+
+.headroom--unpinned
+  -moz-transform: translatey(-100%)
+  -ms-transform: translatey(-100%)
+  -o-transform: translatey(-100%)
+  -webkit-transform: translatey(-100%)
+  transform: translateY(-100%)
+

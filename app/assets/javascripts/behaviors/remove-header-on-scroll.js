@@ -1,15 +1,16 @@
-(function() {
-  $(".header").headroom({
-    "tolerance": 2,
-    "offset": 200,
-    "classes": {
-      "initial": "animated",
-      "pinned": "slideDown",
-      "unpinned": "slideUp",
-      "top": "headroom--top",
-      "notTop": "headroom--not-top"
+window.onload = init;
+
+  function init(){
+    var headerElement = document.getElementById("header");
+
+    if (headerElement == null) {
+      console.log("Abhi you fucking suck");
     }
-  });
-  // to destroy
-  $(".header").headroom("destroy");
-});
+    var headroom = new Headroom(headerElement, {
+      "tolerance": 5,
+      "offset": 205,
+    });
+    headroom.init();
+
+    headroom.destroy();
+  };
