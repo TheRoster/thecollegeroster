@@ -25,3 +25,6 @@
   sudo reboot now
 
   ps aux | grep unicorn (or any other server process)
+
+  abhi=# CREATE DATABASE college_roster;
+  abhi=# CREATE USER tcr_user WITH PASSWORD 'password';
