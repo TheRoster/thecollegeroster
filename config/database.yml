@@ -52,3 +52,10 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: college_roster_development
+  pool: 5
+  user: abhi

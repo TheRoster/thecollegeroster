@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140517202145) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "athletes", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -37,10 +40,10 @@ ActiveRecord::Schema.define(version: 20140517202145) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "athletes", ["high_school_id"], name: "index_athletes_on_high_school_id"
-  add_index "athletes", ["position_id"], name: "index_athletes_on_position_id"
-  add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token"
-  add_index "athletes", ["sport_id"], name: "index_athletes_on_sport_id"
+  add_index "athletes", ["high_school_id"], name: "index_athletes_on_high_school_id", using: :btree
+  add_index "athletes", ["position_id"], name: "index_athletes_on_position_id", using: :btree
+  add_index "athletes", ["remember_token"], name: "index_athletes_on_remember_token", using: :btree
+  add_index "athletes", ["sport_id"], name: "index_athletes_on_sport_id", using: :btree
 
   create_table "high_schools", force: true do |t|
     t.string "name"
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140517202145) do
     t.datetime "updated_at"
   end
 
-  add_index "positions", ["sport_id"], name: "index_positions_on_sport_id"
+  add_index "positions", ["sport_id"], name: "index_positions_on_sport_id", using: :btree
 
   create_table "relationships", force: true do |t|
     t.integer  "fan_id"
@@ -64,9 +67,9 @@ ActiveRecord::Schema.define(version: 20140517202145) do
     t.datetime "updated_at"
   end
 
-  add_index "relationships", ["fan_id", "follow_id"], name: "index_relationships_on_fan_id_and_follow_id", unique: true
-  add_index "relationships", ["fan_id"], name: "index_relationships_on_fan_id"
-  add_index "relationships", ["follow_id"], name: "index_relationships_on_follow_id"
+  add_index "relationships", ["fan_id", "follow_id"], name: "index_relationships_on_fan_id_and_follow_id", unique: true, using: :btree
+  add_index "relationships", ["fan_id"], name: "index_relationships_on_fan_id", using: :btree
+  add_index "relationships", ["follow_id"], name: "index_relationships_on_follow_id", using: :btree
 
   create_table "sports", force: true do |t|
     t.string   "name"
@@ -90,8 +93,8 @@ ActiveRecord::Schema.define(version: 20140517202145) do
     t.datetime "updated_at"
   end
 
-  add_index "stats", ["athlete_id"], name: "index_stats_on_athlete_id"
-  add_index "stats", ["position_id"], name: "index_stats_on_position_id"
-  add_index "stats", ["sport_id"], name: "index_stats_on_sport_id"
+  add_index "stats", ["athlete_id"], name: "index_stats_on_athlete_id", using: :btree
+  add_index "stats", ["position_id"], name: "index_stats_on_position_id", using: :btree
+  add_index "stats", ["sport_id"], name: "index_stats_on_sport_id", using: :btree
 
 end
