@@ -12,6 +12,7 @@ gem 'font-awesome-sass'
 gem "select2-rails"
 gem "paperclip", "~> 4.1"
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem "autoprefixer-rails"
 
 # Ember gems
 # gem 'ember-rails'
@@ -36,7 +37,6 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
-# gem 'mysql'
 gem 'rails_12factor'
 gem 'pg'
 
