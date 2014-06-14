@@ -11,6 +11,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-sass'
 gem "select2-rails"
 gem "paperclip", "~> 4.1"
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Ember gems
 # gem 'ember-rails'
@@ -38,3 +39,6 @@ end
 # gem 'mysql'
 gem 'rails_12factor'
 gem 'pg'
+
+# ruby
+ruby '2.1.1'
