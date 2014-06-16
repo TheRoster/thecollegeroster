@@ -9,7 +9,6 @@
           - @athlete.errors.full_messages.each do |message|
             li= message
     .image
-      h4 Preview:
       = image_tag @athlete.avatar.url(:medium), :id => "preview"
       = f.file_field :avatar
     .confirm

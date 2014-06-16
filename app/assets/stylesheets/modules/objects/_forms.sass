@@ -9,6 +9,8 @@
     height: 45px
     border: 1px solid $dark-grey
     border-bottom: none
+    &:last-child
+      border-bottom: 1px solid $dark-grey
   .name
     display: flex
     flex-direction: row
@@ -34,6 +36,9 @@
       &:hover
         background-color: lighten($black, 5%)
         color: $white
+  .image
+    display: flex
+    align-items: center
 
 .signin-form
   display: flex
