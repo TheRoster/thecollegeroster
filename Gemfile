@@ -13,6 +13,7 @@ gem "select2-rails"
 gem "paperclip", "~> 4.1"
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem "autoprefixer-rails"
+gem 'httparty'
 
 # Ember gems
 # gem 'ember-rails'
