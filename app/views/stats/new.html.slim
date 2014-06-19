@@ -1,0 +1,24 @@
+.left-nav
+  ul
+    li.left-nav-item
+      a= link_to new_athlete_stat_path(current_athlete)
+        i.fa.fa-plus
+    li.left-nav-item
+      a= link_to athlete_stats_path(current_athlete)
+        i.fa.fa-university
+
+.athlete-stats
+  .container-half.stat-create
+    h1.stat-header Log Your Last Stat
+    .stat-form
+      =simple_form_for :stat, url: athlete_stats_path do |f|
+        .inputs
+          =f.input :date_played, as: :date, wrapper_html: { class: 'stat-date' }
+          =f.input :points, wrapper_html: { class: 'stat-input' }
+          =f.input :rebounds, wrapper_html: { class: 'stat-input' }
+          =f.input :assists, wrapper_html: { class: 'stat-input' }
+          =f.input :blocks, wrapper_html: { class: 'stat-input' }
+          =f.input :turnovers, wrapper_html: { class: 'stat-input' }
+          =f.input :minutes_played, wrapper_html: { class: 'stat-input' }
+          =f.button :submit, class: 'stat-submit'
+

@@ -1,1 +1,30 @@
-= render 'shared/create_stat'
+.left-nav
+  ul
+    li.left-nav-item
+      a= link_to new_athlete_stat_path(current_athlete)
+        i.fa.fa-plus
+    li.left-nav-item
+      a= link_to athlete_stats_path(current_athlete)
+        i.fa.fa-university
+
+.container
+  table.stats-table
+    thead
+      th Date Played
+      th Points
+      th Rebounds
+      th Assists
+      th Steals
+      th Blocks
+      th Turnovers
+      th Minutes
+    - @stats.each do |stat|
+      tbody
+        td= stat.date_played
+        td= stat.points
+        td= stat.rebounds
+        td= stat.assists
+        td= stat.steals
+        td= stat.blocks
+        td= stat.turnovers
+        td= stat.minutes_played

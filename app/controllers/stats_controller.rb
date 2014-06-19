@@ -17,7 +17,7 @@ class StatsController < ApplicationController
   def create
     @stat = current_athlete.stats.build(stat_params)
     if @stat.save
-      redirect_to athletes_url, flash: { success: 'Stat saved!' }
+      redirect_to athlete_stats_url, flash: { success: 'Stat saved!' }
     else
       render :new
     end

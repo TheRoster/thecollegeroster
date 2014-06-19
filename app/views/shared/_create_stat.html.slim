@@ -1,10 +1,10 @@
 .left-nav
   ul
     li.left-nav-item
-      a href="#"
+      a= link_to new_athlete_stat_path(current_athlete)
         i.fa.fa-plus
     li.left-nav-item
-      a href="#"
+      a= link_to athlete_stats_path(current_athlete)
         i.fa.fa-university
 
 .athlete-stats
