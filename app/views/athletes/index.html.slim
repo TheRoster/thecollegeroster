@@ -12,7 +12,7 @@
             p.large-font.strong= athlete.full_name
             p= athlete.high_school.name
         .card_stat
-          = render 'shared/recent_stat'
+          p= "#{athlete.athlete_last_stat}"
         .card_player_profile
           .profile_column_1
             p= athlete.sport.name

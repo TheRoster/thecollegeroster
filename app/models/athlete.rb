@@ -21,10 +21,10 @@ class Athlete < ActiveRecord::Base
   has_secure_password
 
   def athlete_last_stat
-    if stats.first.nil?
+    if stats.empty?
       "No stats yet!"
     else
-      "#{stats.last}"
+      stats.last
     end
   end
 
