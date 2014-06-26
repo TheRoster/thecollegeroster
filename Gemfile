@@ -14,6 +14,8 @@ gem "paperclip", "~> 4.1"
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem "autoprefixer-rails"
 gem 'httparty'
+gem 'smarter_csv'
+gem 'utf8-cleaner'
 
 # Ember gems
 # gem 'ember-rails'

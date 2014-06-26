@@ -46,9 +46,15 @@ ActiveRecord::Schema.define(version: 20140517202145) do
   add_index "athletes", ["sport_id"], name: "index_athletes_on_sport_id", using: :btree
 
   create_table "high_schools", force: true do |t|
-    t.string "name"
-    t.string "city"
-    t.string "state"
+    t.string  "name"
+    t.string  "phone"
+    t.string  "address"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string  "county"
   end
 
   create_table "positions", force: true do |t|
