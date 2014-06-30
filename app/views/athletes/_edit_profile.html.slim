@@ -1,13 +1,13 @@
-.signup-form
-  = simple_form_for(@athlete) do |f|
-    - if @athlete.errors.any?
-      #error_explanation
-        h2
-          = pluralize(@athlete.errors.count, "error ")
-          | prohibited you from being saved:
-        ul
-          - @athlete.errors.full_messages.each do |message|
-            li= message
+= simple_form_for(@athlete) do |f|
+  - if @athlete.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@athlete.errors.count, "error ")
+        | prohibited you from being saved:
+      ul
+        - @athlete.errors.full_messages.each do |message|
+          li= message
+  .split_form
     .image
       = image_tag @athlete.avatar.url(:medium), :id => "preview"
       = f.file_field :avatar
@@ -18,9 +18,10 @@
       = f.input :grad_year, label: false
       = f.input :height, label: false
       = f.input :weight, label: false
+  .split_form
+    .confirm
       = f.association :high_school, value_method: :id
       = f.association :sport, value_method: :id
       = f.association :position, value_method: :id
-    .submit
-      = f.button :submit, value: "Update Profile"
-
+  .submit
+    = f.button :submit, value: "Update Profile"
