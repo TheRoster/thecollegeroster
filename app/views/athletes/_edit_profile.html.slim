@@ -20,7 +20,11 @@
       = f.input :weight, label: false
   .split_form
     .confirm
-      = f.association :high_school, value_method: :id
+      = f.simple_fields_for :high_school do |hs|
+        = hs.input :state
+        = hs.input :city
+        = hs.input :name
+  .split_form
       = f.association :sport, value_method: :id
       = f.association :position, value_method: :id
   .submit
