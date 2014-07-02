@@ -1,7 +1,7 @@
 class AthletesController < ApplicationController
 
   def index
-    @athletes = Athlete.joins(:high_school, :sport, :position).all
+    @athletes = Athlete.all
   end
 
   def show
@@ -29,6 +29,7 @@ class AthletesController < ApplicationController
 
   def update
     @athlete = Athlete.find(params[:id])
+    @athlete.high_school ||= HighSchool.new
     if @athlete.update_attributes(athlete_params)
       flash[:success] = "Profile Updated!"
       redirect_to @athlete

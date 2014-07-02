@@ -12,4 +12,9 @@ module AthletesHelper
   def athlete_high_school athlete
     "#{athlete.high_school_name}"
   end
+
+  def setup_hs athlete
+    athlete.high_school ||= HighSchool.new
+    athlete
+  end
 end

@@ -8,6 +8,7 @@ class Athlete < ActiveRecord::Base
   has_many :stats,  dependent: :destroy
 
   belongs_to :high_school
+
   belongs_to :sport
   belongs_to :position
 
