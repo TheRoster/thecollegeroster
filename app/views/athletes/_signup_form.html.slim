@@ -15,5 +15,9 @@
       = f.input :email, label: false, error_html: { class: 'error'}
       = f.input :password, label: false, error_html: { class: 'error'}
       = f.input :password_confirmation, label: false, error_html: { class: 'error'}
+      = f.simple_fields_for :high_school do |hs|
+        = hs.input :state, collection: HighSchool.order(:state).uniq.pluck(:state)
+        = hs.input :city, collection: HighSchool.order(:city).uniq.pluck(:city)
+        = hs.input :name, collection: HighSchool.order(:name).uniq.pluck(:name)
     .submit
       = f.button :submit, value: "Create"

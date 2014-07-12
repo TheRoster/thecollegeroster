@@ -1,4 +1,0 @@
-= simple_form_for @machine do |m|
-  = m.simple_fields_for :parts do |p|
-    = p.input :name
-

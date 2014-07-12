@@ -10,6 +10,7 @@ class AthletesController < ApplicationController
 
   def new
     @athlete = Athlete.new
+    @athlete.high_school ||= HighSchool.new
   end
 
   def edit

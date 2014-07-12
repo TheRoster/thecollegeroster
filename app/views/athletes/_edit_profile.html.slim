@@ -21,9 +21,9 @@
   .split_form
     .confirm
       = f.simple_fields_for :high_school do |hs|
-        = hs.input :state, collection: HighSchool.all.each { |h| puts h.state }
-        = hs.input :city
-        = hs.input :name
+        = hs.input :state, collection: HighSchool.order(:state).uniq.pluck(:state)
+        = hs.input :city, collection: HighSchool.order(:city).uniq.pluck(:city)
+        = hs.input :name, collection: HighSchool.order(:name).uniq.pluck(:name)
   .split_form
       = f.association :sport, value_method: :id
       = f.association :position, value_method: :id
