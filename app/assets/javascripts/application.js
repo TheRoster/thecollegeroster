@@ -17,7 +17,3 @@
 //= require_tree ./vendor
 //= require_tree ./behaviors
 //= require_tree .
-//
-$(document).ready(function() { $("#athlete_high_school_attributes_state").select2(); });
-// $(document).ready(function() { $("#athlete_high_school_attributes_city").select2(); });
-// $(document).ready(function() { $("#athlete_high_school_attributes_name").select2(); });
