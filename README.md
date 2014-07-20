@@ -46,6 +46,6 @@
   git push heroku master (push to heroku)
   heroku run rake db:migrate (run migrations on server)
   heroku ps (make sure server is running)
-  heroku pg:reset HEROKU_POSTGRESQL_BLUE_URL (drop database)
-  heroku pg:psql --app fierce-brook-8780 blue (connect to dev database)
+  heroku pg:reset HEROKU_POSTGRESQL_GOLD_URL (drop database)
+  heroku pg:psql --app thecollegeroster blue (connect to dev database)
 
