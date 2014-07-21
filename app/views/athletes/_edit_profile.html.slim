@@ -1,12 +1,12 @@
 = simple_form_for(@athlete) do |f|
-  / - if @athlete.errors.any?
-    / #error_explanation
-      / h2
-        / = pluralize(@athlete.errors.count, "error ")
-        / | prohibited you from being saved:
-      / ul
-        / - @athlete.errors.full_messages.each do |message|
-          / li= message
+  - if @athlete.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@athlete.errors.count, "error ")
+        | prohibited you from being saved:
+      ul
+        - @athlete.errors.full_messages.each do |message|
+          li= message
   .split_form
     .image
       = image_tag @athlete.avatar.url(:medium), :id => "preview"
@@ -18,12 +18,8 @@
       = f.input :grad_year, label: false
       = f.input :height, label: false
       = f.input :weight, label: false
-  .split_form
-    .confirm
       = f.simple_fields_for :high_school do |hs|
-        = hs.input :state, collection: HighSchool.order(:state).uniq.pluck(:state)
-        = hs.input :city, collection: HighSchool.order(:city).uniq.pluck(:city)
-        = hs.input :name, collection: HighSchool.order(:name).uniq.pluck(:name)
+        = hs.input :name, collection: HighSchool.all.order(:name)
   .split_form
       = f.association :sport, value_method: :id
       = f.association :position, value_method: :id

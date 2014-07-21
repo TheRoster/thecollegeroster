@@ -40,7 +40,6 @@ class Athlete < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-
   private
 
   def set_email_to_lowercase
