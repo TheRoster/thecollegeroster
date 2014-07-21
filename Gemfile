@@ -16,6 +16,7 @@ gem "autoprefixer-rails"
 gem 'httparty'
 gem 'smarter_csv'
 gem 'utf8-cleaner'
+gem 'elementaljs-rails'
 
 # Ember gems
 # gem 'ember-rails'
@@ -35,13 +36,9 @@ group :development, :test do
   gem 'sqlite3'
   gem "capybara"
   gem 'pry'
-  gem 'bcrypt-ruby', '~> 3.1.2'
   gem 'factory_girl'
   gem 'factory_girl_rails'
 end
 
 gem 'rails_12factor'
 gem 'pg'
-
-# ruby
-ruby '2.1.1'
