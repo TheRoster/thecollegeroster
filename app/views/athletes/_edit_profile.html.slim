@@ -7,21 +7,18 @@
       ul
         - @athlete.errors.full_messages.each do |message|
           li= message
-  .split_form
-    .image
-      = image_tag @athlete.avatar.url(:medium), :id => "preview"
-      = f.file_field :avatar
-    .confirm
-      = f.input :first_name, label: false
-      = f.input :last_name, label: false
-      = f.input :email, label: false
-      = f.input :grad_year, label: false
-      = f.input :height, label: false
-      = f.input :weight, label: false
+  .edit_profile_form
+    .split_form
+      .image.mal
+        = image_tag @athlete.avatar.url(:medium), :id => "preview"
+        = f.file_field :avatar
+    .split_form.row
+      = f.input :grad_year, input_html: { class: 'basic-slide' }
+      = f.input :height, input_html: { class: 'basic-slide' }
+      = f.input :weight, input_html: { class: 'basic-slide' }
       = f.simple_fields_for :high_school do |hs|
-        = hs.input :name, collection: HighSchool.all.order(:name)
-  .split_form
-      = f.association :sport, value_method: :id
-      = f.association :position, value_method: :id
+        = hs.input :id, collection: HighSchool.all.order(:name), input_html: { class: 'basic-select' }
+      = f.association :sport, value_method: :id, input_html: { class: 'basic-select' }
+      = f.association :position, value_method: :id, input_html: { class: 'basic-select' }
   .submit
     = f.button :submit, value: "Update Profile"

@@ -10,12 +10,11 @@ class AthletesController < ApplicationController
 
   def new
     @athlete = Athlete.new
-    @athlete.high_school ||= HighSchool.new
   end
 
   def edit
     @athlete = Athlete.find(params[:id])
-    @athlete.high_school ||= HighSchool.new
+    @high_schools = HighSchool.all
   end
 
   def create
