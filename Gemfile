@@ -18,11 +18,6 @@ gem 'smarter_csv'
 gem 'utf8-cleaner'
 gem 'elementaljs-rails'
 
-# Ember gems
-# gem 'ember-rails'
-# gem 'ember-source', '1.5.0'
-
-
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc

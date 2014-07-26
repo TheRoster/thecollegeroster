@@ -17,6 +17,10 @@
         a= link_to new_athlete_stat_path(current_athlete)
           i.fa.fa-signal
           | Stats
+      li
+        a= link_to athletes_path
+          i.fa.fa-users
+          | Athletes
     .header-signin
       p= "Hi, #{welcome_name current_athlete}"
       a= link_to "Sign Out", logout_path

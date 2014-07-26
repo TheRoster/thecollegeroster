@@ -22,7 +22,7 @@ class AthletesController < ApplicationController
     if @athlete.save
       sign_in @athlete
       flash[:success] = "You were successfully created."
-      redirect_to athletes_url
+      redirect_to edit_athlete_url(@athlete)
     else
       render :new
     end
