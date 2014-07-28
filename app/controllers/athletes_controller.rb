@@ -14,11 +14,11 @@ class AthletesController < ApplicationController
 
   def edit
     @athlete = Athlete.find(params[:id])
-    @high_schools = HighSchool.all
   end
 
   def create
     @athlete = Athlete.new(athlete_params)
+    @athlete.high_school ||= HighSchool.last #assign a default high school
     if @athlete.save
       sign_in @athlete
       flash[:success] = "You were successfully created."

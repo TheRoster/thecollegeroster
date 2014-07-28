@@ -17,7 +17,7 @@
       = f.input :height, input_html: { class: 'basic-slide' }
       = f.input :weight, input_html: { class: 'basic-slide' }
       = f.simple_fields_for :high_school do |hs|
-        = hs.input :id, collection: HighSchool.all.order(:name), input_html: { class: 'basic-select' }
+        = hs.input :name, collection: HighSchool.all.order(:name), input_html: { class: 'basic-select' }
       = f.association :sport, value_method: :id, input_html: { class: 'basic-select' }
       = f.association :position, value_method: :id, input_html: { class: 'basic-select' }
   .submit
